@@ -1,5 +1,3 @@
-'use client';
-
 import type { Metadata } from 'next';
 import { inter, respira } from './_fonts';
 import { MainLayout } from '@/components/MainLayout';
@@ -7,7 +5,6 @@ import { MainLayout } from '@/components/MainLayout';
 import '../styles/global.scss';
 import { appConfig } from '@/config';
 import { Analytics } from '@vercel/analytics/react';
-import { AbstraxionProvider } from '@burnt-labs/abstraxion';
 
 export const metadata: Metadata = {
   title: 'Burn it down',
@@ -45,9 +42,7 @@ export default function RootLayout({
       style={{ height: '100vh', overflow: 'hidden' }}
     >
       <body>
-        <AbstraxionProvider>
-          <MainLayout>{children}</MainLayout>
-        </AbstraxionProvider>
+        <MainLayout>{children}</MainLayout>
         <Analytics />
       </body>
     </html>
